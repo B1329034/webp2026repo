@@ -1,0 +1,454 @@
+Microsoft Windows [版本 10.0.26200.7171]
+(c) Microsoft Corporation. 著作權所有，並保留一切權利。
+
+C:\Users\csie2->pip3 install
+Defaulting to user installation because normal site-packages is not writeable
+ERROR: You must give at least one requirement to install (see "pip help install")
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\csie2->pip help install
+
+Usage:
+  pip install [options] <requirement specifier> [package-index-options] ...
+  pip install [options] -r <requirements file> [package-index-options] ...
+  pip install [options] [-e] <vcs project url> ...
+  pip install [options] [-e] <local project path> ...
+  pip install [options] <archive url/path> ...
+
+Description:
+  Install packages from:
+
+  - PyPI (and other indexes) using requirement specifiers.
+  - VCS project urls.
+  - Local project directories.
+  - Local or remote source archives.
+
+  pip also supports installing from "requirements files", which provide
+  an easy way to specify a whole environment to be installed.
+
+Install Options:
+  -r, --requirement <file>    Install from the given requirements file. This option can be used multiple times.
+  -c, --constraint <file>     Constrain versions using the given constraints file. This option can be used multiple
+                              times.
+  --no-deps                   Don't install package dependencies.
+  --pre                       Include pre-release and development versions. By default, pip only finds stable
+                              versions.
+  -e, --editable <path/url>   Install a project in editable mode (i.e. setuptools "develop mode") from a local project
+                              path or a VCS url.
+  --dry-run                   Don't actually install anything, just print what would be. Can be used in combination
+                              with --ignore-installed to 'resolve' the requirements.
+  -t, --target <dir>          Install packages into <dir>. By default this will not replace existing files/folders in
+                              <dir>. Use --upgrade to replace existing packages in <dir> with new versions.
+  --platform <platform>       Only use wheels compatible with <platform>. Defaults to the platform of the running
+                              system. Use this option multiple times to specify multiple platforms supported by the
+                              target interpreter.
+  --python-version <python_version>
+                              The Python interpreter version to use for wheel and "Requires-Python" compatibility
+                              checks. Defaults to a version derived from the running interpreter. The version can be
+                              specified using up to three dot-separated integers (e.g. "3" for 3.0.0, "3.7" for 3.7.0,
+                              or "3.7.3"). A major-minor version can also be given as a string without dots (e.g. "37"
+                              for 3.7.0).
+  --implementation <implementation>
+                              Only use wheels compatible with Python implementation <implementation>, e.g. 'pp', 'jy',
+                              'cp',  or 'ip'. If not specified, then the current interpreter implementation is used.
+                              Use 'py' to force implementation-agnostic wheels.
+  --abi <abi>                 Only use wheels compatible with Python abi <abi>, e.g. 'pypy_41'. If not specified, then
+                              the current interpreter abi tag is used. Use this option multiple times to specify
+                              multiple abis supported by the target interpreter. Generally you will need to specify
+                              --implementation, --platform, and --python-version when using this option.
+  --user                      Install to the Python user install directory for your platform. Typically ~/.local/, or
+                              %APPDATA%\Python on Windows. (See the Python documentation for site.USER_BASE for full
+                              details.)
+  --root <dir>                Install everything relative to this alternate root directory.
+  --prefix <dir>              Installation prefix where lib, bin and other top-level folders are placed. Note that the
+                              resulting installation may contain scripts and other resources which reference the
+                              Python interpreter of pip, and not that of ``--prefix``. See also the ``--python``
+                              option if the intention is to install packages into another (possibly pip-free)
+                              environment.
+  --src <dir>                 Directory to check out editable projects into. The default in a virtualenv is "<venv
+                              path>/src". The default for global installs is "<current dir>/src".
+  -U, --upgrade               Upgrade all specified packages to the newest available version. The handling of
+                              dependencies depends on the upgrade-strategy used.
+  --upgrade-strategy <upgrade_strategy>
+                              Determines how dependency upgrading should be handled [default: only-if-needed]. "eager"
+                              - dependencies are upgraded regardless of whether the currently installed version
+                              satisfies the requirements of the upgraded package(s). "only-if-needed" -  are upgraded
+                              only when they do not satisfy the requirements of the upgraded package(s).
+  --force-reinstall           Reinstall all packages even if they are already up-to-date.
+  -I, --ignore-installed      Ignore the installed packages, overwriting them. This can break your system if the
+                              existing package is of a different version or was installed with a different package
+                              manager!
+  --ignore-requires-python    Ignore the Requires-Python information.
+  --no-build-isolation        Disable isolation when building a modern source distribution. Build dependencies
+                              specified by PEP 518 must be already installed if this option is used.
+  --use-pep517                Use PEP 517 for building source distributions (use --no-use-pep517 to force legacy
+                              behaviour).
+  --check-build-dependencies  Check the build dependencies when PEP517 is used.
+  --break-system-packages     Allow pip to modify an EXTERNALLY-MANAGED Python installation
+  -C, --config-settings <settings>
+                              Configuration settings to be passed to the PEP 517 build backend. Settings take the form
+                              KEY=VALUE. Use multiple --config-settings options to pass multiple keys to the backend.
+  --global-option <options>   Extra global options to be supplied to the setup.py call before the install or
+                              bdist_wheel command.
+  --compile                   Compile Python source files to bytecode
+  --no-compile                Do not compile Python source files to bytecode
+  --no-warn-script-location   Do not warn when installing scripts outside PATH
+  --no-warn-conflicts         Do not warn about broken dependencies
+  --no-binary <format_control>
+                              Do not use binary packages. Can be supplied multiple times, and each time adds to the
+                              existing value. Accepts either ":all:" to disable all binary packages, ":none:" to empty
+                              the set (notice the colons), or one or more package names with commas between them (no
+                              colons). Note that some packages are tricky to compile and may fail to install when this
+                              option is used on them.
+  --only-binary <format_control>
+                              Do not use source packages. Can be supplied multiple times, and each time adds to the
+                              existing value. Accepts either ":all:" to disable all source packages, ":none:" to empty
+                              the set, or one or more package names with commas between them. Packages without binary
+                              distributions will fail to install when this option is used on them.
+  --prefer-binary             Prefer binary packages over source packages, even if the source packages are newer.
+  --require-hashes            Require a hash to check each requirement against, for repeatable installs. This option
+                              is implied when any package in a requirements file has a --hash option.
+  --progress-bar <progress_bar>
+                              Specify whether the progress bar should be used [on, off] (default: on)
+  --root-user-action <root_user_action>
+                              Action if pip is run as a root user. By default, a warning message is shown.
+  --report <file>             Generate a JSON file describing what pip did to install the provided requirements. Can
+                              be used in combination with --dry-run and --ignore-installed to 'resolve' the
+                              requirements. When - is used as file name it writes to stdout. When writing to stdout,
+                              please combine with the --quiet option to avoid mixing pip logging output with JSON
+                              output.
+  --no-clean                  Don't clean up build directories.
+
+Package Index Options:
+  -i, --index-url <url>       Base URL of the Python Package Index (default https://pypi.org/simple). This should
+                              point to a repository compliant with PEP 503 (the simple repository API) or a local
+                              directory laid out in the same format.
+  --extra-index-url <url>     Extra URLs of package indexes to use in addition to --index-url. Should follow the same
+                              rules as --index-url.
+  --no-index                  Ignore package index (only looking at --find-links URLs instead).
+  -f, --find-links <url>      If a URL or path to an html file, then parse for links to archives such as sdist
+                              (.tar.gz) or wheel (.whl) files. If a local path or file:// URL that's a directory, then
+                              look for archives in the directory listing. Links to VCS project URLs are not supported.
+
+General Options:
+  -h, --help                  Show help.
+  --debug                     Let unhandled exceptions propagate outside the main subroutine, instead of logging them
+                              to stderr.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  --require-virtualenv        Allow pip to only run in a virtual environment; exit with an error otherwise.
+  --python <python>           Run pip with the specified Python interpreter.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to
+                              WARNING, ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --no-input                  Disable prompting for input.
+  --keyring-provider <keyring_provider>
+                              Enable the credential lookup via the keyring library if user input is allowed. Specify
+                              which mechanism to use [disabled, import, subprocess]. (default: disabled)
+  --proxy <proxy>             Specify a proxy in the form scheme://[user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup,
+                              (a)bort.
+  --trusted-host <hostname>   Mark this host or host:port pair as trusted, even though it does not have valid or any
+                              HTTPS.
+  --cert <path>               Path to PEM-encoded CA certificate bundle. If provided, overrides the default. See 'SSL
+                              Certificate Verification' in pip documentation for more information.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the
+                              certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output.
+  --no-python-version-warning
+                              Silence deprecation warnings for upcoming unsupported Pythons.
+  --use-feature <feature>     Enable new functionality, that may be backward incompatible.
+  --use-deprecated <feature>  Enable deprecated functionality, that will be removed in the future.
+
+C:\Users\csie2->python.exe--pip install --upgrade pip
+'python.exe--pip' 不是內部或外部命令、可執行的程式或批次檔。
+
+C:\Users\csie2->pip3 install -- upgrade pip
+Defaulting to user installation because normal site-packages is not writeable
+ERROR: Could not find a version that satisfies the requirement upgrade (from versions: none)
+ERROR: No matching distribution found for upgrade
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\csie2->pip3 list
+Package            Version
+------------------ -----------
+aenum              3.1.15
+aiohappyeyeballs   2.6.1
+aiohttp            3.11.18
+aiosignal          1.3.2
+annotated-types    0.7.0
+astroid            3.1.0
+async-timeout      5.0.1
+attrs              23.2.0
+beautifulsoup4     4.9.3
+bs4                0.0.2
+certifi            2024.2.2
+cffi               1.16.0
+chardet            4.0.0
+charset-normalizer 3.4.1
+colorama           0.4.6
+Deprecated         1.2.18
+dill               0.3.8
+distlib            0.3.9
+exceptiongroup     1.2.0
+filelock           3.18.0
+frozenlist         1.6.0
+future             1.0.0
+h11                0.14.0
+idna               2.10
+isort              5.13.2
+line-bot-sdk       3.17.0
+mccabe             0.7.0
+multidict          6.4.3
+numpy              1.26.4
+outcome            1.3.0.post0
+pandas             2.2.2
+pip                24.0
+platformdirs       4.2.0
+propcache          0.3.1
+pycparser          2.22
+pydantic           2.11.3
+pydantic_core      2.33.1
+pylint             3.1.0
+PySocks            1.7.1
+python-dateutil    2.9.0.post0
+pytz               2024.1
+requests           2.32.3
+selenium           4.19.0
+setuptools         56.0.0
+six                1.16.0
+sniffio            1.3.1
+sortedcontainers   2.4.0
+soupsieve          2.2
+tomli              2.0.1
+tomlkit            0.12.4
+trio               0.25.0
+trio-websocket     0.11.1
+typing_extensions  4.13.2
+typing-inspection  0.4.0
+tzdata             2024.1
+urllib3            2.4.0
+virtualenv         20.30.0
+wrapt              1.17.2
+wsproto            1.2.0
+yarl               1.20.0
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\csie2->pip3 install --upgrade pip
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in c:\users\csie2-\appdata\roaming\python\python39\site-packages (24.0)
+Collecting pip
+  Downloading pip-26.0.1-py3-none-any.whl.metadata (4.7 kB)
+Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 8.8 MB/s eta 0:00:00
+ERROR: To modify pip, please run the following command:
+c:\program files\python39\python.exe -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\csie2->python3 -V
+Python 3.12.10
+
+C:\Users\csie2->pip install
+Defaulting to user installation because normal site-packages is not writeable
+ERROR: You must give at least one requirement to install (see "pip help install")
+
+[notice] A new release of pip is available: 24.0 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+C:\Users\csie2->python.exe -m pip install --upgrade pip
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in c:\users\csie2-\appdata\roaming\python\python39\site-packages (24.0)
+Collecting pip
+  Using cached pip-26.0.1-py3-none-any.whl.metadata (4.7 kB)
+Using cached pip-26.0.1-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+  WARNING: The scripts pip.exe, pip3.9.exe and pip3.exe are installed in 'C:\Users\csie2-\AppData\Roaming\Python\Python39\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-26.0.1
+
+C:\Users\csie2->pip3 list
+Package            Version
+------------------ -----------
+aenum              3.1.15
+aiohappyeyeballs   2.6.1
+aiohttp            3.11.18
+aiosignal          1.3.2
+annotated-types    0.7.0
+astroid            3.1.0
+async-timeout      5.0.1
+attrs              23.2.0
+beautifulsoup4     4.9.3
+bs4                0.0.2
+certifi            2024.2.2
+cffi               1.16.0
+chardet            4.0.0
+charset-normalizer 3.4.1
+colorama           0.4.6
+Deprecated         1.2.18
+dill               0.3.8
+distlib            0.3.9
+exceptiongroup     1.2.0
+filelock           3.18.0
+frozenlist         1.6.0
+future             1.0.0
+h11                0.14.0
+idna               2.10
+isort              5.13.2
+line-bot-sdk       3.17.0
+mccabe             0.7.0
+multidict          6.4.3
+numpy              1.26.4
+outcome            1.3.0.post0
+pandas             2.2.2
+pip                26.0.1
+platformdirs       4.2.0
+propcache          0.3.1
+pycparser          2.22
+pydantic           2.11.3
+pydantic_core      2.33.1
+pylint             3.1.0
+PySocks            1.7.1
+python-dateutil    2.9.0.post0
+pytz               2024.1
+requests           2.32.3
+selenium           4.19.0
+setuptools         56.0.0
+six                1.16.0
+
+(myenv312) C:\Users\csie2->pip install django
+Collecting django
+  Downloading django-6.0.3-py3-none-any.whl.metadata (3.9 kB)
+Collecting asgiref>=3.9.1 (from django)
+  Downloading asgiref-3.11.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.5.0 (from django)
+  Downloading sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+Collecting tzdata (from django)
+  Downloading tzdata-2025.3-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading django-6.0.3-py3-none-any.whl (8.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 23.5 MB/s eta 0:00:00
+Downloading asgiref-3.11.1-py3-none-any.whl (24 kB)
+Downloading sqlparse-0.5.5-py3-none-any.whl (46 kB)
+Downloading tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.11.1 django-6.0.3 sqlparse-0.5.5 tzdata-2025.3
+
+[notice] A new release of pip is available: 25.0.1 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(myenv312) C:\Users\csie2->django-admin startproject hello_django
+
+(myenv312) C:\Users\csie2->cd hello_django
+
+(myenv312) C:\Users\csie2-\hello_django>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 04, 2026 - 16:14:37
+Django version 6.0.3, using settings 'hello_django.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+[04/Mar/2026 16:16:02] "GET / HTTP/1.1" 200 12068
+Not Found: /favicon.ico
+[04/Mar/2026 16:16:02] "GET /favicon.ico HTTP/1.1" 404 2214
+
+(myenv312) C:\Users\csie2-\hello_django>notepad hello_django\settings.py
+
+(myenv312) C:\Users\csie2-\hello_django>python manage.py runserver
+Watching for file changes with StatReloader
+INFO 2026-03-04 16:33:01,308 autoreload Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 04, 2026 - 16:33:01
+Django version 6.0.3, using settings 'hello_django.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+
+(myenv312) C:\Users\csie2-\hello_django>pip install djangorestframework
+Collecting djangorestframework
+  Downloading djangorestframework-3.16.1-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: django>=4.2 in c:\users\csie2-\myenv312\lib\site-packages (from djangorestframework) (6.0.3)
+Requirement already satisfied: asgiref>=3.9.1 in c:\users\csie2-\myenv312\lib\site-packages (from django>=4.2->djangorestframework) (3.11.1)
+Requirement already satisfied: sqlparse>=0.5.0 in c:\users\csie2-\myenv312\lib\site-packages (from django>=4.2->djangorestframework) (0.5.5)
+Requirement already satisfied: tzdata in c:\users\csie2-\myenv312\lib\site-packages (from django>=4.2->djangorestframework) (2025.3)
+Downloading djangorestframework-3.16.1-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.5 MB/s eta 0:00:00
+Installing collected packages: djangorestframework
+Successfully installed djangorestframework-3.16.1
+
+[notice] A new release of pip is available: 25.0.1 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(myenv312) C:\Users\csie2-\hello_django>python manage.py startapp myapp
+
+(myenv312) C:\Users\csie2-\hello_django>notepad hello_django\settings.py
+
+(myenv312) C:\Users\csie2-\hello_django>notepad myapp\views.py
+
+(myenv312) C:\Users\csie2-\hello_django>notepad hello_django\urls.py
+
+(myenv312) C:\Users\csie2-\hello_django>python manage.py runserver
+Watching for file changes with StatReloader
+INFO 2026-03-04 16:44:52,110 autoreload Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 04, 2026 - 16:44:52
+Django version 6.0.3, using settings 'hello_django.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Not Found: /
+WARNING 2026-03-04 16:46:20,695 log Not Found: /
+[04/Mar/2026 16:46:20] "GET / HTTP/1.1" 404 2312
+[04/Mar/2026 16:46:41] "GET /hello/ HTTP/1.1" 200 5146
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+[04/Mar/2026 16:46:41] "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
