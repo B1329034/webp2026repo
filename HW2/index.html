@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSIE Course Table - HW2</title>
+    <style>
+        /* 教材提供的表格與按鈕樣式 */
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even){ background-color: #f2f2f2; }
+        tr:hover { background-color: #ddd; }
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>資工選課表</h2>
+
+    <table id="csie">
+        <tr>
+            <th>開課單位</th>
+            <th>課程名稱</th>
+            <th>授課教師</th>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>物件導向軟體設計</td>
+            <td>黃崇源</td>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>計算機網路實驗</td>
+            <td>李春良</td>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>作業系統實務</td>
+            <td>張哲維</td>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>生物統計</td>
+            <td>陳光武</td>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>通訊系統</td>
+            <td>陳仁暉</td>
+        </tr>
+        <tr>
+            <td>資工系</td>
+            <td>軟硬體專題(2)</td>
+            <td>魏志達</td>
+        </tr>
+    </table>
+
+    <button onclick="changeResult()">Change</button>
+
+    <script>
+        function changeResult() {
+            // 獲取表格物件
+            var myTable = document.getElementById("csie");
+            
+            // 實作 Page 80 的功能：點擊後將第一列的老師改成「李春良」
+            // rows[1] 代表第一行資料 (index從0開始，0是標題)
+            // cells[2] 代表第三個欄位 (授課教師)
+            myTable.rows[1].cells[2].innerHTML = "李春良";
+            
+            // 同時加上一個簡單的 Popover (彈出視窗) 提醒使用者
+            alert("課程內容已更新！");
+        }
+    </script>
+
+</body>
+</html>
