@@ -1,0 +1,5 @@
+<div class="container">
+  <h1>Flickr 照片牆</h1>
+  <button id="fetch-btn">獲取 Flickr 照片</button>
+  <div id="gallery" class="gallery"></div>
+</div>
