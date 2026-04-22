@@ -1,0 +1,42 @@
+const apiKey = 'ca370d51a054836007519a00ff4ce59e';
+const btn = document.querySelector('#fetch-btn');
+const gallery = document.querySelector('#gallery');
+
+btn.addEventListener('click', getFlickrPhotos);
+
+function getFlickrPhotos() {
+  // 1. 取得最近的照片列表 (每頁 12 張)
+  const listUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=${apiKey}&per_page=12&format=json&nojsoncallback=1`;
+
+  gallery.innerHTML = '讀取中...';
+
+  fetch(listUrl)
+    .then(response => response.json())
+    .then(data => {
+      gallery.innerHTML = ''; // 清除讀取字樣
+      const photos = data.photos.photo;
+
+      photos.forEach(photo => {
+        // 2. 針對每張照片取得其尺寸網址
+        getPhotoSizes(photo.id);
+      });
+    })
+    .catch(err => console.error("發生錯誤：", err));
+}
+
+function getPhotoSizes(photoId) {
+  const sizeUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${apiKey}&photo_id=${photoId}&format=json&nojsoncallback=1`;
+
+  fetch(sizeUrl)
+    .then(response => response.json())
+    .then(data => {
+      // 取得 Medium 或 Large 尺寸的照片網址
+      const sizes = data.sizes.size;
+      const imgUrl = sizes[sizes.length - 3].source; // 通常取倒數第三個適中尺寸
+
+      // 3. 建立 img 標籤並放入畫面
+      const img = document.createElement('img');
+      img.src = imgUrl;
+      gallery.appendChild(img);
+    });
+}
